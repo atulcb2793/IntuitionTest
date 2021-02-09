@@ -1,0 +1,37 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 50px;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #221f42;
+  color: white;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.form-group {
+  margin-top: 20px;
+  text-align: center;
+}
+.form-group input {
+  width: 500px;
+  display: inline;
+  margin-left: 10px;
+}
+
+.custom:hover {
+  color: red;
+}

@@ -1,0 +1,22 @@
+<div class="container fluid">
+  <ul>
+    <li class="main">
+      <h3>Movies</h3>
+      <ul>
+        <li
+          class="categories"
+          *ngFor="let category of categoriesData; let i = index"
+        >
+          <h5 (click)="getData(i)">
+            {{ category.name }}
+          </h5>
+          <ul *ngIf="showMovies.has(i)">
+            <li class="movies" *ngFor="let one of showMovies.get(i)">
+              <h6>{{ one.name }}</h6>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

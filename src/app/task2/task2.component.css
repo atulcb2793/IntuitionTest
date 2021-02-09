@@ -1,0 +1,33 @@
+table {
+  font-family: arial, sans-serif;
+  border: 1px solid black;
+  width: 100%;
+  margin-top: 50px;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+th {
+  background-color: #221f42;
+  color: white;
+  text-align: center;
+}
+
+td {
+  background-color: #dddddd;
+}
+
+.form-group {
+  margin-top: 20px;
+  text-align: center;
+}
+.form-group input {
+  width: 500px;
+  display: inline;
+  margin-left: 10px;
+}

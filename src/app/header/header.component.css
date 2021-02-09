@@ -1,0 +1,24 @@
+.header {
+  height: 70px;
+  background-color: #292966;
+  color: white;
+  padding: 15px;
+  position: sticky;
+}
+
+h3 {
+  display: inline;
+}
+a {
+  color: white;
+  float: right;
+  top: 10px;
+  position: relative;
+  margin-left: 20px;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: red;
+  text-decoration: none;
+}

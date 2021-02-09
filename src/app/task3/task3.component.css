@@ -1,0 +1,32 @@
+* {
+  cursor: pointer;
+}
+ul {
+  margin-left: 100px;
+}
+
+li {
+  margin-left: 40px;
+}
+
+.main {
+  color: #9b1b1b;
+  padding-top: 50px;
+}
+
+h3:hover {
+  text-decoration: underline;
+}
+
+h5:hover {
+  text-decoration: underline;
+}
+
+.movies {
+  color: #2c689b;
+  list-style-type: decimal;
+}
+
+.categories {
+  color: green;
+}

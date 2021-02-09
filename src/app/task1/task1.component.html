@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="col-md-12 form-group">
+    <label for="search-text">Filter By Name : </label>
+    <input
+      class="form-control"
+      [(ngModel)]="searchKey"
+      placeholder="Enter name to Filter"
+      autofocus
+    />
+  </div>
+
+  <table>
+    <tr>
+      <th
+        *ngFor="let one of deviceData[0] | keyvalue"
+        [hidden]="one.key === 'id'"
+      >
+        <div style="display: flex">
+          <h6 style="width: 100%">{{ one.key }}</h6>
+          <a (click)="sortByOption(one.key)"
+            ><i ngClass="fa fa-sort custom" aria-hidden="true"></i
+          ></a>
+        </div>
+      </th>
+    </tr>
+    <tr *ngFor="let one of sortedData || deviceData | textFilter: searchKey">
+      <td *ngFor="let item of one | keyvalue; let i = index" [hidden]="i === 0">
+        {{ item.value }}
+      </td>
+    </tr>
+  </table>
+</div>

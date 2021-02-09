@@ -1,0 +1,80 @@
+<div class="container-fluid">
+  <div class="col-md-12 form-group">
+    <input
+      class="form-control"
+      placeholder="Enter To Do"
+      [(ngModel)]="item"
+      autofocus
+    />
+    <button
+      class="btn btn-secondary"
+      type="submit"
+      (click)="addTodo()"
+      style="margin-left: 10px"
+    >
+      Add
+    </button>
+  </div>
+  <div class="alert alert-danger" role="alert" *ngIf="errorData">
+    {{ errorData }}
+  </div>
+
+  <table *ngIf="todoData.length > 0">
+    <tr>
+      <th>Items</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let one of todoData">
+      <td
+        *ngFor="let item of one | keyvalue; let i = index"
+        [hidden]="i === 0"
+        [ngStyle]="{ 'background-color': getColor(item.value, i) }"
+      >
+        {{ item.value }}
+      </td>
+      <td>
+        <button (click)="openModal(confirmTemplate, one.id)">
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
+        </button>
+        <button
+          style="margin-left: 10px"
+          type="submit"
+          (click)="openModal(statusTemplate, one.id)"
+        >
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<ng-template #confirmTemplate>
+  <div class="modal-body text-center">
+    <p>Do you want to confirm?</p>
+    <button type="button" class="btn btn-default" (click)="confirm()">
+      Yes
+    </button>
+    <button type="button" class="btn btn-primary" (click)="decline()">
+      No
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #statusTemplate>
+  <div class="modal-body text-center">
+    <a (click)="decline()" style="float: right">
+      <i class="fa fa-window-close" aria-hidden="true"></i>
+    </a>
+    <p>Change status options</p>
+    <button
+      *ngFor="let one of ['To Do', 'Started', 'Done']"
+      type="submit"
+      class="btn btn-primary"
+      style="margin-left: 5px"
+      (click)="alterStatus(one)"
+    >
+      {{ one }}
+    </button>
+  </div>
+</ng-template>
